@@ -1,3 +1,7 @@
+# Локализации
+- [ru Русский](README.ru.md) <-- Текущая
+- [en English](README.md)
+
 # GNR Parser
 Лёгкая библиотека для парсинга файлов .gnr (Game Notation Record) и работы со структурированными данными игры.
 
