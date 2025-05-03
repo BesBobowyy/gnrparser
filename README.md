@@ -27,7 +27,7 @@ Each GNR file may include the following fields:
 ```pip install gnrparser```
 
 ## Usage
-```
+``` python
 import gnrparser
 
 raw_data = "...your GNR content..."
