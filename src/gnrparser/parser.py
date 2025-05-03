@@ -96,7 +96,7 @@ if __name__ == "__main__":
         DIR = os.path.dirname(os.path.abspath(__file__))
 
     try:
-        with open(os.path.join(os.path.dirname(DIR), "file.gnr"), 'r', encoding='utf-8') as file:
+        with open(os.path.join(os.path.dirname(os.path.dirname(DIR)), "file.gnr"), 'r', encoding='utf-8') as file:
             DATA = file.read()
     except Exception as e:
         print(e)
