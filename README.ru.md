@@ -27,7 +27,7 @@
 ```pip install gnrparser```
 
 ## Использование
-```
+``` python
 import gnrparser
 
 raw_data = "...ваш GNR-контент..."
