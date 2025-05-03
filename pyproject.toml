@@ -15,4 +15,4 @@ dependencies = []
 requires-python = ">=3.6"
 
 [project.urls]
-"Homepage" = "https://github.com/besbobowyy/gnrparser"
+"Homepage" = "https://github.com/BesBobowyy/gnrparser"
