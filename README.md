@@ -1,31 +1,35 @@
-# GNR PARSER #
-Library for parsing a .gnr files and operate with parsed data.
+# GNR Parser
+A lightweight library for parsing `.gnr` (Game Notation Record) files and operating on structured game data.
 
-gnrparser.read(data: str) - Returns readed data from file content.
-gnrparser.analyze(data: dict) - Recieves parsed data and returns normalized data with all fields and autocompletions.
+## Features
+- `gnrparser.read(data: str)`: Parses raw GNR text and returns structured tag and move data.
+- `gnrparser.analyze(data: dict)`: Takes parsed data and returns normalized output with default fields and autocompletions.
 
-GNR files have this structure (Version 1):
-[Version: <INTEGER>] - Version of format.
-[Game: <STRING>] - Name of the game.
-[P<INT>: <STRING>] - Index and name of player. Format hasn't any limit for players count.
-[Variation: <STRING>] - Name of the game variation.
-[Termination: <STRING>] - How the game ended, write "null" if game in process.
-[Date: <STRING>] - When game playing.
-[Field Size: <LIST[INT, INT]>] - Size of the field.
-[Time Limit: <STRING>] - Time limit in format: BASE+ADD, BASE or null if game hasn't time limit.
-[Organization: <STRING>] - The game place.
-[Start Position: <STRING>] - Unique formatting for the game start position.
-1. <MOVES> 2. <MOVES> 3. ... - Unique formatting for the game moves.
+## GNR Format Specification (Version 1)
+Each GNR file may include the following fields:
+- `[Version: INTEGER]` — Format version.
+- `[Game: STRING]` — Name of the game.
+- `[P<INT>: STRING]` — Player index and name. The format supports any number of players (e.g. `[P1: Alice]`, `[P2: Bob]`).
+- `[Variation: STRING]` — Name of the game variation.
+- `[Termination: STRING]` — How the game ended. Use `"null"` if the game is still in progress.
+- `[Date: STRING]` — Date of the game (format: `DD.MM.YYYY`).
+- `[Field Size: INT, INT]` — Width and height of the game field.
+- `[Time Limit: STRING]` — Time control format. Examples: `10+5`, `15`, or `null` (no time limit).
+- `[Organization: STRING]` — Where or by whom the game was held.
+- `[Start Position: STRING]` — Encoded initial field position (custom format, game-specific).
+- `1. MOVES 2. MOVES 3. ...` — Turn-based move list (space-separated per turn).
 
-# How to install #
-1. Install the package.
+## Installation
 ```pip install gnrparser```
 
-2. Import the package.
-```import gnrparser```
+## Usage
+```
+import gnrparser
 
-3. Use library functions.
-```gnrparser.read()
-gnrparser.analyze()```
+raw_data = "...your GNR content..."
+parsed = gnrparser.read(raw_data)
+analyzed = gnrparser.analyze(parsed)
+```
 
-Author: BesBobowyy (2025)
+## Author
+BesBobowyy — 2025
